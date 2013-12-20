@@ -1,4 +1,4 @@
-<html>
+<html ng-app="snake">
 <head>
 	<title>Snake Game</title>
 	<style>
@@ -8,16 +8,35 @@
 	</style>
 
 </head>
-<body>
+<body ng-controller="snakeCtrl">
 	<h1>Snake</h1>
 	<button id="killGameButton">Kill Game</button>
-	
+
+    Walls
+    <ul>
+        <li ng-repeat="wall in walls">
+            Wall {{$index+1}}
+            <br/>
+            Head
+            <input type="text" ng-model="wall.head.row">
+            <input type="text" ng-model="wall.head.col">
+            <br/>
+            Size
+            <input type="text" ng-model="wall.size.height">
+            <input type="text" ng-model="wall.size.width">
+        </li>
+
+    </ul>
+
+    <br/>
+
+
 	<canvas id="snakeGameCanvas" width="500" height="500"></canvas>
 
-	<!--
-	<script type="text/javascript" src="snakeGame.js"></script>
-	-->
-	<script type="text/javascript" src="simpleSnake.js"></script>
+
+
+    <script type="text/javascript" src="res/angular/angular.min.js"></script>
+    <script type="text/javascript" src="snake-ng.js"></script>
 
 </body>
 </html>
