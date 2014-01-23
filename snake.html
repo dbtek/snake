@@ -1,50 +1,44 @@
 <html ng-app="snake">
-<head>
-	<title>Snake Game</title>
-	<style>
-		canvas {
-			border: 10px solid red;
-		}
-	</style>
+  <head>
+    <title>Snake Game</title>
+    <style>
+      canvas {
+        border: 10px solid red;
+      }
+    </style>
 
-</head>
-<body ng-controller="snakeCtrl">
-	<h1>Snake</h1>
-	<button id="killGameButton">Kill Game</button>
+  </head>
+  <body ng-controller="snakeCtrl">
+    <h1>Snake</h1>
 
     Walls
     <ul>
-        <li ng-repeat="wall in walls">
-            Wall {{$index+1}}
-            <br/>
-            Head
-            <input type="text" ng-model="wall.head.row">
-            <input type="text" ng-model="wall.head.col">
-            <br/>
-            Size
-            <input type="text" ng-model="wall.size.height">
-            <input type="text" ng-model="wall.size.width">
-        </li>
+      <li ng-repeat="wall in walls">
+        Wall {{$index+1}}
+        <br/>
+        Head
+        <input type="text" ng-model="wall.head.row">
+        <input type="text" ng-model="wall.head.col">
+        <br/>
+        Size
+        <input type="text" ng-model="wall.size.height">
+        <input type="text" ng-model="wall.size.width">
+      </li>
 
     </ul>
 
     Snake <button ng-click="snake.move()">Move</button>
     <select ng-model="snake.direction">
-        <option value="right">Right</option>
-        <option value="left">Left</option>
-        <option value="up">Up</option>
-        <option value="down">Down</option>
+      <option value="right">Right</option>
+      <option value="left">Left</option>
+      <option value="up">Up</option>
+      <option value="down">Down</option>
     </select>
-
     <br/>
-
-
-	<canvas id="snakeGameCanvas" width="500" height="500"></canvas>
-
-
-
+    <canvas id="snakeGameCanvas" width="500" height="500"></canvas>
     <script type="text/javascript" src="res/angular/angular.min.js"></script>
-    <script type="text/javascript" src="snake-ng.js"></script>
+    <script type="text/javascript" src="app/modules/gridServiceFactory.js"></script>
+    <script type="text/javascript" src="app/snake-ng.js"></script>
 
-</body>
+  </body>
 </html>
