@@ -2,6 +2,9 @@ var snakeApp = angular.module('snake', ['gridServiceFactory']);
 
 
 var snakeCtrl = function($scope, gridService){
+  
+  gridService.setCanvas('snakeGameCanvas').
+              setGridSize(50,50);
 
   $scope.walls = [
     {
@@ -69,8 +72,7 @@ var snakeCtrl = function($scope, gridService){
     });
   }, true);
 
-  gridService.setCanvas('snakeGameCanvas').
-              setGridSize(50,50);
+  
 
   $scope.drawWalls();
 

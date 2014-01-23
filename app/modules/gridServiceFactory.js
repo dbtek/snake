@@ -36,7 +36,7 @@ gridService.factory('gridService', function() {
       return this;
     },
 
-    clean: function(grid, box){
+    clean: function(grid, box) {
       boxWidth = this.canvas.width / this.grid.cols;
       boxHeight = this.canvas.height / this.grid.rows;
 
